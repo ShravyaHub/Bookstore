@@ -1,0 +1,64 @@
+.form {
+    margin-top: 30px;
+    padding: 49px 43px 49px 43px;
+    border: 1px solid #00000029;
+    border-radius: 8px;
+}
+
+.form-head, .title-head {
+    font: 21px/16px Roboto;
+    padding-bottom: 20px;
+    color: #A03037;
+}
+
+.title-head {
+    font: 24px Roboto;
+}
+
+.textbox {
+    width: 195px;
+}
+
+.email {
+    width: 400px;
+}
+
+.error-text {
+    font-size: 10px;
+}
+
+.button-div {
+    padding-top: 50px;
+}
+
+.link-text {
+    text-decoration: none;
+    color:#A03037;
+}
+
+.next-button {
+    background-color: #A03037;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    color: white;
+    border: white;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: white;
+  }
+
+@media only screen and (max-width: 600px) {
+    .form {
+        margin-top: 10px;
+        border: 0px;
+    }
+
+    .form-div {
+        width: 100%;
+    }
+
+    .textbox {
+        width: 100%;
+    }
+}

@@ -1,0 +1,35 @@
+<div fxLayoutAlign="center">
+    <form class="form" [formGroup]="loginForm" (ngSubmit)="signIn(loginForm.value)">
+      <div>
+        <div class = "form-head" fxLayoutAlign="center">Bookstore</div>
+        <div class="title-head" fxLayoutAlign="center">Sign in</div>
+        <div class="title-head account" fxLayoutAlign="center">Use your Bookstore Account</div>
+        <div>
+          <mat-form-field appearance="outline" class="textbox">
+            <mat-label>Email</mat-label>
+            <input matInput type="text" formControlName="email" id="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && loginForm.controls.email.errors }">
+            <mat-error *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+            </mat-error>          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="outline" class="textbox">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password" id="password" [ngClass]="{ 'is-invalid': submitted && loginForm.controls.password.errors }">
+            <mat-hint>
+              <a class="link-text">Forgot password?</a>
+            </mat-hint>
+            <mat-error *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+                <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+            </mat-error>  
+                  </mat-form-field>
+        </div>
+        <div class="button-div" fxLayoutAlign="space-between center">
+          <a routerLink="../signUp" class="link-text">Create Account</a>
+          <input class="next-button" type="submit" value="Next" [style.fontSize.px]="11">
+        </div>
+      </div>
+    </form>
+  </div>
