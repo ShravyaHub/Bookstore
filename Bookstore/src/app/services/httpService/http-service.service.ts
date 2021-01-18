@@ -14,10 +14,10 @@ export class HttpServiceService {
   constructor(private http: HttpClient) {}
 
   get(url:any) {
-    // this.token=localStorage.getItem('token');
+    this.token=localStorage.getItem('token');
     let options={
       headers:new HttpHeaders({
-        'Authorization':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDAwMDlmZDUwNzc2NjAwMTc3NzZjODgiLCJpYXQiOjE2MTA2MTU0MjksImV4cCI6MTYxMDcwMTgyOX0.ZyabMyCx8l7IpkkxWIuoymSjDgEFULRt-zzV4aERzDM',
+        'Authorization':this.token,
         'Content-Type':'application/x-www-form-urlencoded'
       })
     }

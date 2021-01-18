@@ -1,30 +1,37 @@
-<div>
-    <div fxLayoutAlign="space-between" fxLayoutAlign="row">
+<div class="main">
+    <div class="header" fxLayoutAlign="row" fxLayoutAlign="space-between">
         <div class="books-text">Books</div>
-        <select>
-            <option>Sort by relevence</option>
+        <div>
+        <select #myDropDownList (click)="rel()">
+            <option selected>Sort by relevence</option>
             <option>Price: Low to high</option>
             <option>Price: High to low</option>
             <option>Newest Arrivals</option>
         </select>
+        </div>
     </div>
+    <div class="book-div">
+    <div *ngFor="let item of data" fxLayoutALign="row" fxLayoutAlign="space-between">
     <mat-card>
         <mat-card-content class="cover">
-            <!-- <img src=""> -->
+            <img src={{item.bookImage}}>
         </mat-card-content>
         <mat-card-content class="detail">
             <mat-card-title>
-                Book title
+                {{item.bookName}}
             </mat-card-title>
             <mat-card-subtitle>
-                by Author
+                by {{item.author}}
             </mat-card-subtitle>
-            <span><b>Rs 200</b>
+            <span><b>Rs {{item.price}}</b>
             </span>
             <div class="button" fxLayoutAlign="row" fxLayoutAlign="space-between">
-            <button mat-flat-button class="add-button">Add to bag</button>
+            <button mat-flat-button class="add-button" (click)="addToCart(item)">Add to bag</button>
     <button mat-flat-button class="wishlist">Wishlist</button>
 </div>
         </mat-card-content>
     </mat-card>
 </div>
+</div>
+</div>
+

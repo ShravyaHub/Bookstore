@@ -3,8 +3,8 @@
       <div class="form-div">
         <div class = "form-head" fxLayoutAlign="center">Bookstore</div>
         <div class="title-head" fxLayoutAlign="center">Create your Bookstore Account</div>
-        <div fxLayout.xs="column" fxLayoutAlign="space-between">
-          <mat-form-field appearance="outline" class="textbox">
+        <div>
+          <mat-form-field appearance="outline" class="textbox email">
             <mat-label>Full name</mat-label>
             <input matInput type="text" formControlName="firstName" id="fisrtName" [ngClass]="{ 'is-invalid': submitted && registerForm.controls.firstName.errors }">
             <mat-error *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
@@ -48,7 +48,7 @@
         <div>
         </div>
         <div class="button-div" fxLayoutAlign="space-between center">
-          <a routerLink="../signIn" class="link-text">Sign in instead</a>
+          <a routerLink="../login" class="link-text">Sign in instead</a>
           <input class="next-button" type="submit" value="Next" [style.fontSize.px]="11">
         </div>
       </div>

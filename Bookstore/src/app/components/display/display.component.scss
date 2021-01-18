@@ -1,18 +1,29 @@
+.main {
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 30px;
+
+}
+
 .books-text{
-    padding-left:100px;
-    padding-top: 30px;
     font-size: 20px;
 }
 
-select {
-    margin-left: 900px;
+mat-card-title {
+    font-size: 20px;
+}
+
+.book-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 mat-card {
     width: 200px;
-    margin-left: 100px;
-    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .button {
@@ -31,4 +42,13 @@ mat-card {
     border: 1px solid;
     background-color: white;
     border-radius: 0px;
+}
+
+@media only screen and (max-width: 664px){
+
+    .book-div{
+        display: flex;
+        justify-content: center;
+    }
+    
 }

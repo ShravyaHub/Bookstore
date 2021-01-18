@@ -4,6 +4,9 @@ import { LoginComponent } from '../app/components/login/login.component';
 import { RegisterComponent } from '../app/components/register/register.component';
 import { DashboardComponent } from '../app/components/dashboard/dashboard.component';
 import { DisplayComponent } from './components/display/display.component';
+import { MyCartComponent } from './components/my-cart/my-cart.component';
+
+
 
 
 const routes: Routes = [{ path: '', pathMatch: 'full', redirectTo: '/login'},
@@ -12,7 +15,8 @@ const routes: Routes = [{ path: '', pathMatch: 'full', redirectTo: '/login'},
                         {path: 'dashboard', component: DashboardComponent, 
                         children: [
                           {path: '', component: DisplayComponent },
-                          {path: 'books', component: DisplayComponent}]}];
+                          {path: 'books', component: DisplayComponent},
+                          {path: 'cart', component: MyCartComponent}]}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

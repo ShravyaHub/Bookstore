@@ -18,6 +18,9 @@ import { DisplayComponent } from './components/display/display.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { MyCartComponent } from './components/my-cart/my-cart.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { MyCartComponent } from './components/my-cart/my-cart.component';
     MatSnackBarModule,
     MatIconModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatPaginatorModule,
+    MatExpansionModule,
+    MatRadioModule
   ],
   providers: [{provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2000}},],
   bootstrap: [AppComponent]

@@ -1,1 +1,108 @@
-<p>my-cart works!</p>
+<div class="main">
+<mat-accordion class="example-headers-align">
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          My cart
+        </mat-panel-title>
+      
+      </mat-expansion-panel-header>
+      <div>
+        <span class="image">
+            <img mat-panel-image>
+        </span>
+        <span class="position">
+            <mat-card-title>Title</mat-card-title>
+            <mat-card-subtitle><br>Author</mat-card-subtitle>
+            <mat-card-content><br>Price<br></mat-card-content>
+            <div>
+                <button mat-icon-button>
+                    <mat-icon>remove_circle_outline</mat-icon>
+                </button>
+                Quantity
+                <button mat-icon-button>
+                    <mat-icon>add_circle_outline</mat-icon>
+                </button>
+                
+                <button mat-stroked-button>remove</button>
+            </div>
+        </span>
+    </div>
+  
+    </mat-expansion-panel>
+  
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Customer Details
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+        <form>
+            <div fxLayoutAlign="row">
+            <mat-form-field appearance="outline" class="textbox">
+                <mat-label>Name</mat-label>
+                <input matInput type="text">
+               </mat-form-field>
+               <mat-form-field appearance="outline" class="textbox">
+                <mat-label>Phone number</mat-label>
+                <input matInput type="text">
+               </mat-form-field>
+            </div>
+            <div fxLayoutAlign="row">
+                <mat-form-field appearance="outline" class="textbox">
+                    <mat-label>Pincode</mat-label>
+                    <input matInput type="text">
+                   </mat-form-field>
+                   <mat-form-field appearance="outline" class="textbox">
+                    <mat-label>Locality</mat-label>
+                    <input matInput type="text">
+                   </mat-form-field>
+                </div>
+                <mat-form-field appearance="outline" class="textbox">
+                    <mat-label>Address</mat-label>
+                    <input matInput type="text">
+                   </mat-form-field>
+                   <div fxLayoutAlign="row">
+                    <mat-form-field appearance="outline" class="textbox">
+                        <mat-label>city/town</mat-label>
+                        <input matInput type="text">
+                       </mat-form-field>
+                       <mat-form-field appearance="outline" class="textbox">
+                        <mat-label>Landmark</mat-label>
+                        <input matInput type="text">
+                       </mat-form-field>
+                    </div>
+                    <mat-radio-group aria-label="Type">
+                        <div class="mat-radio">
+                            <mat-radio-button value="1">Home</mat-radio-button>
+                        <mat-radio-button value="2">Work</mat-radio-button>
+                        <mat-radio-button value="2">Other</mat-radio-button>
+                        </div>
+                    </mat-radio-group>
+                    <div class="continue-div" fxLayoutAlign="end">
+                    <button mat-button class="continue">Continue</button>
+                </div>
+        </form>
+    </mat-expansion-panel>
+  
+    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Order Summary
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+  
+      <div>
+        <span class="image">
+            <img mat-panel-image>
+        </span>
+        <span class="position">
+            <mat-card-title>Title</mat-card-title>
+            <mat-card-subtitle><br>Author</mat-card-subtitle>
+            <mat-card-content><br>Price<br></mat-card-content>
+            </span>
+        </div>
+    </mat-expansion-panel>
+  
+  </mat-accordion>
+</div>

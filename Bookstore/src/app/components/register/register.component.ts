@@ -35,14 +35,6 @@ export class RegisterComponent implements OnInit {
 
     get f() { return this.registerForm.controls; }
 
-    onSubmit() {
-        this.submitted = true;
-
-        if (this.registerForm.invalid) return;
-
-        this.snackBar.open("Sign in successful");
-    }
-
     signUp=(signUpFormValue: { firstName:any; email:any; phoneNumber:any; password:any; })=> {
         this.submitted=true;
     

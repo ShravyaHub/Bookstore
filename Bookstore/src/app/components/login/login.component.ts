@@ -28,13 +28,6 @@ export class LoginComponent implements OnInit {
 
     get f() { return this.loginForm.controls; }
 
-    onSubmit() {
-        this.submitted = true;
-
-        if (this.loginForm.invalid) return;
-
-        this.snackBar.open("Sign in successful");
-    }
 
     signIn=(signInFormValue: { email:any; password:any; })=> {
       this.submitted = true;
@@ -48,10 +41,10 @@ export class LoginComponent implements OnInit {
       }
   
       this.userService.loginUser(user).subscribe((response:any) => {
-        localStorage.setItem("token", response.id);
-        localStorage.setItem("Email", signInFormValue.email);
+        console.log(response);
+        localStorage.setItem("token", response.result.accessToken);
         this.snackBar.open("Sign in successful");
-        this.route.navigate(['/dashboard/note']);
+        this.route.navigate(['/dashboard/books']);
       }, () => {
         this.snackBar.open("Incorrect email or password");
       });
