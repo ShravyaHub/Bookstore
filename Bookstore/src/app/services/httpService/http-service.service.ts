@@ -29,13 +29,17 @@ export class HttpServiceService {
   post(url: string, data: any) {
     let options={
       headers:new HttpHeaders({
-        'Authorization':this.token,
+        'Name':this.token,
         'Content-Type':'application/json'
       })
     }
     console.log(data);
     return this.http.post(this.baseURL + url, data, options);
   }
+
+  public getJSON() {
+    return this.http.get("../../../assets/imagePath.json");
+}
 
   encode(data:any) {
     const formBody=[];
