@@ -14,4 +14,12 @@ export class ProductServiceService {
 
   addToCart(data:any, id:any) { return this.http.post('/bookstore_user/add_cart_item/' + id, data)}
 
+  getCart() { return this.http.get('/bookstore_user/get_cart_items'); }
+
+  removeItem(data:any, id:any) { return this.http.delete('/bookstore_user/remove_cart_item/' + id, data); }
+
+  updateQuantity(data:any, id:any) { return this.http.put('/bookstore_user/cart_item_quantity/' + id, data); }
+
+  order(data:any) { return this.http.post('/bookstore_user/add/order', data); }
+
 }

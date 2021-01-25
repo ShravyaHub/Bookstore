@@ -21,6 +21,9 @@ import { MyCartComponent } from './components/my-cart/my-cart.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatRadioModule} from '@angular/material/radio';
+import { OrderConfirmedComponent } from './components/order-confirmed/order-confirmed.component';
+import {MatBadgeModule} from '@angular/material/badge';
+import { JwPaginationComponent } from './components/jw-pagination/jw-pagination.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import {MatRadioModule} from '@angular/material/radio';
     RegisterComponent,
     DashboardComponent,
     DisplayComponent,
-    MyCartComponent
+    MyCartComponent,
+    OrderConfirmedComponent,
+    JwPaginationComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +53,8 @@ import {MatRadioModule} from '@angular/material/radio';
     MatButtonModule,
     MatPaginatorModule,
     MatExpansionModule,
-    MatRadioModule
+    MatRadioModule,
+    MatBadgeModule
   ],
   providers: [{provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2000}},],
   bootstrap: [AppComponent]

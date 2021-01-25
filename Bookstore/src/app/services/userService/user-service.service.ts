@@ -11,4 +11,6 @@ export class UserServiceService {
   registerUser(data:any) { return this.httpService.userPost("/bookstore_user/registration", data); }
 
   loginUser(data:any) { return this.httpService.userPost("/bookstore_user/login", data); }
+
+  customerDetails(data:any) { return this.httpService.put("/bookstore_user/edit_user", data); }
 }

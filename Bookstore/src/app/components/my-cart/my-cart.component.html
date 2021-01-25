@@ -7,26 +7,32 @@
         </mat-panel-title>
       
       </mat-expansion-panel-header>
-      <div>
-        <span class="image">
-            <img mat-panel-image>
-        </span>
-        <span class="position">
-            <mat-card-title>Title</mat-card-title>
-            <mat-card-subtitle><br>Author</mat-card-subtitle>
-            <mat-card-content><br>Price<br></mat-card-content>
+      <div *ngFor="let item of cartArray" class="info">
+        <div>
+              <img src={{item.bookImage}}>
+        </div>
+          <div>
             <div>
-                <button mat-icon-button>
+                  {{item.product_id.bookName}}
+                </div>
+              <div>
+                  by {{item.product_id.author}}
+                </div>
+              <div><b>Rs {{item.product_id.price}}</b>
+              </div>
+              <div>
+                <button mat-icon-button (click)="reduce(item._id, item.quantityToBuy)">
                     <mat-icon>remove_circle_outline</mat-icon>
                 </button>
-                Quantity
-                <button mat-icon-button>
+                {{item.quantityToBuy}}
+                <button mat-icon-button (click)="increase(item._id, item.quantityToBuy)">
                     <mat-icon>add_circle_outline</mat-icon>
                 </button>
                 
-                <button mat-stroked-button>remove</button>
+                <button mat-stroked-button (click)="removeItem(item, item._id)">Remove</button>
+              </div>
             </div>
-        </span>
+
     </div>
   
     </mat-expansion-panel>
@@ -37,50 +43,52 @@
           Customer Details
         </mat-panel-title>
       </mat-expansion-panel-header>
-        <form>
+        <form [formGroup]="form" (ngSubmit)="submit(form.value)">
             <div fxLayoutAlign="row">
             <mat-form-field appearance="outline" class="textbox">
                 <mat-label>Name</mat-label>
-                <input matInput type="text">
+                <input matInput type="text" formControlName="name" id="name" [(ngModel)]="name">
                </mat-form-field>
                <mat-form-field appearance="outline" class="textbox">
                 <mat-label>Phone number</mat-label>
-                <input matInput type="text">
+                <input matInput type="text" formControlName="phoneNumber" id="phoneNumber" [(ngModel)]="phoneNumber">
                </mat-form-field>
             </div>
             <div fxLayoutAlign="row">
                 <mat-form-field appearance="outline" class="textbox">
                     <mat-label>Pincode</mat-label>
-                    <input matInput type="text">
+                    <input matInput type="text" formControlName="pincode" id="pincode" [(ngModel)]="pincode">
                    </mat-form-field>
                    <mat-form-field appearance="outline" class="textbox">
                     <mat-label>Locality</mat-label>
-                    <input matInput type="text">
+                    <input matInput type="text" formControlName="locality" id="locality" [(ngModel)]="locality">
                    </mat-form-field>
                 </div>
-                <mat-form-field appearance="outline" class="textbox">
+                <div>
+                  <mat-form-field appearance="outline" class="address">
                     <mat-label>Address</mat-label>
-                    <input matInput type="text">
-                   </mat-form-field>
+                    <textarea matInput formControlName="address" id="address" [(ngModel)]="address"></textarea>
+                  </mat-form-field>
+                </div>
                    <div fxLayoutAlign="row">
                     <mat-form-field appearance="outline" class="textbox">
                         <mat-label>city/town</mat-label>
-                        <input matInput type="text">
+                        <input matInput type="text" formControlName="city" id="city" [(ngModel)]="city">
                        </mat-form-field>
                        <mat-form-field appearance="outline" class="textbox">
                         <mat-label>Landmark</mat-label>
-                        <input matInput type="text">
+                        <input matInput type="text" formControlName="landmark" id="landmark" [(ngModel)]="landmark">
                        </mat-form-field>
                     </div>
-                    <mat-radio-group aria-label="Type">
+                    <mat-radio-group aria-label="Type" formControlName="addressType" id="addressType">
                         <div class="mat-radio">
-                            <mat-radio-button value="1">Home</mat-radio-button>
-                        <mat-radio-button value="2">Work</mat-radio-button>
-                        <mat-radio-button value="2">Other</mat-radio-button>
+                            <mat-radio-button value="Home">Home</mat-radio-button>
+                        <mat-radio-button value="Office">Office</mat-radio-button>
+                        <mat-radio-button value="Other">Other</mat-radio-button>
                         </div>
                     </mat-radio-group>
                     <div class="continue-div" fxLayoutAlign="end">
-                    <button mat-button class="continue">Continue</button>
+                    <button mat-button class="continue" (click)="nextStep()">CONTINUE</button>
                 </div>
         </form>
     </mat-expansion-panel>
@@ -93,15 +101,27 @@
       </mat-expansion-panel-header>
   
       <div>
-        <span class="image">
-            <img mat-panel-image>
-        </span>
-        <span class="position">
-            <mat-card-title>Title</mat-card-title>
-            <mat-card-subtitle><br>Author</mat-card-subtitle>
-            <mat-card-content><br>Price<br></mat-card-content>
-            </span>
+        <div *ngFor="let item of cartArray" class="info">
+          <div>
+                <img src={{item.bookImage}}>
+          </div>
+            <div>
+              <div>
+                    {{item.product_id.bookName}}
+                  </div>
+                <div>
+                    by {{item.product_id.author}}
+                  </div>
+                <div><b>Rs {{item.product_id.price}}</b>
+                </div>
+                </div>
+                </div>
+                
+
         </div>
+        <div class="continue-div" fxLayoutAlign="end">
+          <button mat-button class="continue" (click)="checkout()">CHECKOUT</button>
+      </div>
     </mat-expansion-panel>
   
   </mat-accordion>

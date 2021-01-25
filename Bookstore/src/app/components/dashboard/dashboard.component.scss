@@ -6,7 +6,7 @@
   
   
   .toolbar {
-    padding-left: 100px;
+    padding-left: 130px;
     background-color: #A03037;
   }
   
@@ -39,3 +39,23 @@
     color: white;
   }
   
+  .cart-number {
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-bottom: 26px;
+    position: relative;
+  // top: -100px;
+  }
+
+  mat-icon {
+    color: white;
+    margin-left: 5px;
+  }
+
+  mat-badge-content {
+    background: #A03037;
+}

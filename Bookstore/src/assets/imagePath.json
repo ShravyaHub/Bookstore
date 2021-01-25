@@ -1,40 +1,40 @@
 {
     "paths":[
         {
-        "path": "../../../assets/images/book1.jpg"
+            "path": "../../../assets/images/book1.jpg"
         },
         {
             "path":"../../../assets/images/book2.jpg"
         },
         {
             "path": "../../../assets/images/book3.jpg"
-            },
-            {
-                "path":"../../../assets/images/book4.jpg"
-            },
-            {
-                "path": "../../../assets/images/book5.jpg"
-                },
-                {
-                    "path":"../../../assets/images/book6.jpg"
-                },
-                {
-                    "path": "../../../assets/images/book7.jpg"
-                    },
-                    {
-                        "path":"../../../assets/images/book8.jpg"
-                    },
-                    {
-                        "path": "../../../assets/images/book9.png"
-                        },
-                        {
-                            "path":"../../../assets/images/book10.jpg"
-                        },
-                        {
-                            "path": "../../../assets/images/book11.jpg"
-                            },
-                            {
-                                "path":"../../../assets/images/book12.jpg"
-                            }
+        },
+        {
+            "path":"../../../assets/images/book4.jpg"
+        },
+        {
+            "path": "../../../assets/images/book5.jpg"
+        },
+        {
+            "path":"../../../assets/images/book6.jpg"
+        },
+        {
+            "path": "../../../assets/images/book7.jpg"
+        },
+        {
+            "path":"../../../assets/images/book8.jpg"
+        },
+        {
+            "path": "../../../assets/images/book9.png"
+        },
+        {
+            "path":"../../../assets/images/book10.jpg"
+        },
+        {
+            "path": "../../../assets/images/book11.jpg"
+        },
+        {
+            "path":"../../../assets/images/book12.jpg"
+        }
     ]
 }

@@ -10,10 +10,16 @@
         </select>
         </div>
     </div>
+    <!-- <div class="card-body">
+        <div *ngFor="let item of pageOfItems">{{item.name}}</div>
+    </div>
+    <div class="card-footer pb-0 pt-3">
+        <jw-pagination [items]="items" (changePage)="onChangePage($event)"></jw-pagination>
+    </div> -->
     <div class="book-div">
-    <div *ngFor="let item of data" fxLayoutALign="row" fxLayoutAlign="space-between">
+    <div *ngFor="let item of data" fxLayoutALign="row">
     <mat-card>
-        <mat-card-content class="cover">
+        <mat-card-content fxLayoutAlign="center center" class="cover">
             <img src={{item.bookImage}}>
         </mat-card-content>
         <mat-card-content class="detail">
@@ -25,13 +31,21 @@
             </mat-card-subtitle>
             <span><b>Rs {{item.price}}</b>
             </span>
-            <div class="button" fxLayoutAlign="row" fxLayoutAlign="space-between">
+            <div class="button" fxLayoutAlign="row" fxLayoutAlign="space-between" *ngIf='!item.addedToCart'>
             <button mat-flat-button class="add-button" (click)="addToCart(item)">Add to bag</button>
     <button mat-flat-button class="wishlist">Wishlist</button>
+</div>
+<div class="button">
+<button mat-flat-button *ngIf='item.addedToCart' class="added">ADDED TO CART</button>
 </div>
         </mat-card-content>
     </mat-card>
 </div>
 </div>
+<mat-paginator [length]=length
+              [pageSize]=pageSize
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              (page)="getServerData($event)">
+</mat-paginator>
 </div>
 

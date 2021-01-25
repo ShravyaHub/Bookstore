@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import {ProductServiceService} from '../../services/productService/product-service.service'
 import {HttpServiceService} from '../../services/httpService/http-service.service';
+import { DataSharingService } from '../../services/dataSharing/data-sharing.service';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-display',
@@ -10,7 +12,8 @@ import {HttpServiceService} from '../../services/httpService/http-service.servic
 export class DisplayComponent implements OnInit {
 
   constructor(private productservice:ProductServiceService, 
-              private httpService: HttpServiceService) { }
+              private httpService: HttpServiceService,
+              private dataService: DataSharingService) { }
 
   data:any;
   selectedSort:any;
@@ -19,41 +22,68 @@ export class DisplayComponent implements OnInit {
   bookImages=""
   imageArray:string[] = [];
   i=0;
+  message: any;
+  subscription:any;
+  clicked=false;
 
   ngOnInit(): void {
-    
+    // this.items = Array(150).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}`}));
     this.displayBooks();
-  }
 
+
+  }
+//   items:any[] = [];
+//   pageOfItems!: Array<any>;
+
+//   onChangePage(pageOfItems: Array<any>) {
+//     this.pageOfItems = pageOfItems;
+// }
+
+pageEvent!: PageEvent;
+datasource: null;
+pageIndex!:number;
+pageSize!:number;
+length!:number;
+
+public getServerData(event?:PageEvent){
+  console.log("eveent", event)
+  this.productservice.getBooks().subscribe((response:any) =>{
+    console.log(response);
+        this.datasource = response.result;
+        // this.pageIndex = response.pageIndex;
+        this.pageSize = 5;
+        this.length = response.result.length;
+      
+    },
+    error =>{
+      // handle error
+    }
+  );
+  return event;
+}
 
  
   displayBooks() {
     this.httpService.getJSON().subscribe((data:any) => {
       data.paths.forEach((element:any) => {
-        console.log(element.path);
         this.imageArray.push(element.path);
       });
     });
         this.productservice.getBooks().subscribe((response:any) => {
           this.i=0;
+          this.datasource = response.result;
             response.result.forEach((ele:any) => {
-              console.log(ele);
               ele.bookImage=(ele.bookImage === null) ? this.imageArray[this.i]: ele.bookImage;
-              console.log("Ele", ele);
-              console.log("elem", ele.bookImage);
               this.i++;
             });
          
         this.data=response.result;
-        console.log(response);
       });
         if(this.selectedValue === "Price: Low to high") {
-        console.log("Selected");
         this.data.sort(function (a:any, b:any) {
           return a.price - b.price;
         });
       } else if(this.selectedValue === "Price: High to low") {
-        console.log("Selected");
         this.data.sort(function (a:any, b:any) {
           return b.price - a.price;
         });
@@ -62,13 +92,16 @@ export class DisplayComponent implements OnInit {
   }
 
   addToCart(item:any) {
-    console.log(item);
-    // this.productservice.getCartItems().subscribe((result:any) => {
-    //   console.log(result);
-    // })
+    item.addedToCart=false;
+    for(let b of this.data){
+      if(item.product_id==b.product_id){
+        item.addedToCart=true;
+      }
+    }
     this.productservice.addToCart(item, item._id).subscribe((result:any)=>{
-      console.log(result)
-      // this.getCartItems();
+      this.clicked=false;
+      console.log(result);
+      this.dataService.changeMessage("Cart updated");
     })
   }
 

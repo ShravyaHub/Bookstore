@@ -1,12 +1,27 @@
 .main {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-right: 130px;
     margin-top: 30px;
 
 }
 
 .books-text{
     font-size: 20px;
+}
+
+mat-card {
+    padding:0px;
+}
+
+.header {
+    margin-left: 130px;
+}
+
+.detail {
+    padding: 16px;
+}
+
+.cover {
+    background-color: #F5F5F5;
 }
 
 mat-card-title {
@@ -16,14 +31,26 @@ mat-card-title {
 .book-div {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin-top: 30px;
+    margin-left: 61px;
+        margin-top: 30px;
     flex-wrap: wrap;
 }
 
 mat-card {
-    width: 200px;
+    width: 220px;
+    margin-left: 69px;
     margin-bottom: 30px;
+}
+
+
+
+.cover {
+    height: 150px;
+}
+
+img {
+    height: 120px;
+    width: 90px;
 }
 
 .button {
@@ -35,6 +62,16 @@ mat-card {
     border: 1px solid;
     background-color: #A03037;
     border-radius: 0px;
+    padding: 0px 10px 0px 10px;
+}
+
+.added {
+    color: white;
+    border: 1px solid;
+    background-color: #3371B5;
+    border-radius: 0px;
+    width: 100%;
+    padding: 0px 10px 0px 10px;
 }
 
 .wishlist {
@@ -42,12 +79,16 @@ mat-card {
     border: 1px solid;
     background-color: white;
     border-radius: 0px;
+    padding: 0px 10px 0px 10px;
+
 }
 
 @media only screen and (max-width: 664px){
 
     .book-div{
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
     }
     

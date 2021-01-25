@@ -17,7 +17,7 @@ export class HttpServiceService {
     this.token=localStorage.getItem('token');
     let options={
       headers:new HttpHeaders({
-        'Authorization':this.token,
+        'x-access-token':this.token,
         'Content-Type':'application/x-www-form-urlencoded'
       })
     }
@@ -26,10 +26,32 @@ export class HttpServiceService {
 
   userPost(url:string, data:any) { return this.http.post(this.baseURL + url, data); }
 
+  delete(url:string, data:any) {
+    let options={
+      headers:new HttpHeaders({
+        'x-access-token':this.token,
+        'Content-Type':'application/json'
+      })
+    }
+    console.log(data);
+    return this.http.delete(this.baseURL + url, options);
+  }
+
+  put(url:string, data:any) {
+    let options={
+      headers:new HttpHeaders({
+        'x-access-token':this.token,
+        'Content-Type':'application/json'
+      })
+    }
+    console.log(data);
+    return this.http.put(this.baseURL + url, data, options);
+  }
+
   post(url: string, data: any) {
     let options={
       headers:new HttpHeaders({
-        'Name':this.token,
+        'x-access-token':this.token,
         'Content-Type':'application/json'
       })
     }

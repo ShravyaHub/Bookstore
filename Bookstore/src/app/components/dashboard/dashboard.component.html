@@ -1,9 +1,10 @@
 <mat-toolbar class="toolbar">
-    <span class="title-text" fxLayoutAlign="center center">Bookstore</span>
+    <a routerLink="../dashboard/books" class="link-text"><span class="title-text" fxLayoutAlign="center center">Bookstore</span></a>
     <span class="search-div" fxLayoutAlign="none center">
         <span class="material-icons search-icon">search</span>
         <input class="search" type="search" placeholder="Search">
     </span>
-    <a routerLink="../dashboard/cart" class="link-text"><span class="cart">Cart</span></a>
+    <a routerLink="../dashboard/cart" class="link-text"><span class="cart">Cart </span></a>
+    <mat-icon matBadge="{{amount}}">shopping_cart</mat-icon>
 </mat-toolbar>
 <router-outlet></router-outlet>

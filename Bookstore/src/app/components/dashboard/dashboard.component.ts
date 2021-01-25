@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductServiceService } from '../../services/productService/product-service.service';
+import { DataSharingService } from '../../services/dataSharing/data-sharing.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  amount: any;
+  message: any;
+  subscription:any;
+
+  constructor(private productService: ProductServiceService,
+              private data: DataSharingService) { }
 
   ngOnInit(): void {
+    this.subscription = this.data.currentMessage.subscribe((message:any) => {
+      console.log(message);
+      this.getCartItems();
+      });
   }
+
+  getCartItems() {
+    this.productService.getCartItems().subscribe((response:any) => {
+      this.amount=response.result.length;
+      console.log(response.result.length);
+        });
+  }
+
+
 
 }
