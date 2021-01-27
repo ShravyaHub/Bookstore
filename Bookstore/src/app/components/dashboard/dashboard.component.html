@@ -1,10 +1,17 @@
-<mat-toolbar class="toolbar">
-    <a routerLink="../dashboard/books" class="link-text"><span class="title-text" fxLayoutAlign="center center">Bookstore</span></a>
-    <span class="search-div" fxLayoutAlign="none center">
-        <span class="material-icons search-icon">search</span>
-        <input class="search" type="search" placeholder="Search">
-    </span>
-    <a routerLink="../dashboard/cart" class="link-text"><span class="cart">Cart </span></a>
-    <mat-icon matBadge="{{amount}}">shopping_cart</mat-icon>
-</mat-toolbar>
+<mat-toolbar class="header" >
+    <mat-toolbar-row>
+        <span routerLink="../dashboard/books">Bookstore</span>
+        <span class="input">
+          <div class="search">
+            <input placeholder="Search">
+          </div>
+        </span>
+        <button mat-icon-button>
+          <mat-icon matBadge="{{amount}}" routerLink="../dashboard/wishlist">favorite_border</mat-icon>
+        </button>
+        <button mat-icon-button class="bag" routerLink="../dashboard/cart">Cart
+        <mat-icon matBadge="{{amount}}">shopping_cart</mat-icon>
+        </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
 <router-outlet></router-outlet>

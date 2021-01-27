@@ -13,8 +13,13 @@
 }
 
 mat-expansion-panel {
-    width: 800px;
+    width: 50%;
     margin-left: 100px;
+}
+
+.textbox-div {
+  display: flex;
+  flex-direction: row;
 }
 
 .main{
@@ -50,3 +55,39 @@ mat-radio-button {
     border-radius: 0px;
 }
 
+@media only screen and (max-width: 930px){
+
+  mat-expansion-panel {
+    width: 75%;
+    margin-left: 10px;
+}
+  
+}
+
+@media only screen and (max-width: 620px){
+
+  mat-form-field {
+    width: 150px;
+  }
+
+  .address {
+    width: 307px;
+  }
+  
+}
+
+@media only screen and (max-width: 480px){
+
+  .textbox-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.example-headers-align .mat-form-field + .mat-form-field {
+  margin-left: 0px;
+}
+.textbox {
+  width: 100%;
+}
+  
+}

@@ -1,61 +1,50 @@
-.menu-icon {
-    border: 0px;
-    background-color: white;
-    color: #5F6368;
-  }
-  
-  
-  .toolbar {
-    padding-left: 130px;
-    background-color: #A03037;
-  }
-  
-  .title-text {
-    color: white;
-  }
-
-  .link-text {
-    text-decoration: none;
-    color:#A03037;
+.header {
+  background-color: #8f2b2f;
+  color: white;
 }
-  
-  .search-div {
-    margin-left: 50px;
-    padding: 20px;
-    background-color: #F1F3F4;
-  }
-  
-  .search, .search-div {
-    width: 50%;
-    height: 45px;
-    background-color: #F1F3F4;
-    border: #F1F3F4;
-    border-radius: 8px;
-    outline: none;
-  }
 
-  .cart {
-    padding-left: 150px;
-    color: white;
+.input {
+  width: 50%;
+  height: 38px;
+}
+
+.mat-toolbar-row {
+  justify-content: center;
+}
+
+span {
+  margin-right: 25px;
+}
+
+.bag {
+  margin-left: 10px;
+}
+
+input {
+  width: 80%;
+  border: none;
+  height: 37px;
+  background-color: #f1f3f4;
+  text-indent: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  mat-toolbar-row {
+    width: 98%;
+  }
+}
+
+@media only screen and (max-width: 387px) {
+  mat-toolbar-row {
+    width: 97%;
+  }
+}
+
+
+@media only screen and (max-width: 400px){
+
+  input {
+      text-indent: 0px;
   }
   
-  .cart-number {
-    width: 15px;
-    height: 15px;
-    font-size: 10px;
-    color: white;
-    border: 1px solid white;
-    border-radius: 10px;
-    margin-bottom: 26px;
-    position: relative;
-  // top: -100px;
-  }
-
-  mat-icon {
-    color: white;
-    margin-left: 5px;
-  }
-
-  mat-badge-content {
-    background: #A03037;
 }

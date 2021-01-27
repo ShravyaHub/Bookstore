@@ -44,7 +44,7 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
         <form [formGroup]="form" (ngSubmit)="submit(form.value)">
-            <div fxLayoutAlign="row">
+            <div class="textbox-div">
             <mat-form-field appearance="outline" class="textbox">
                 <mat-label>Name</mat-label>
                 <input matInput type="text" formControlName="name" id="name" [(ngModel)]="name">
@@ -54,7 +54,7 @@
                 <input matInput type="text" formControlName="phoneNumber" id="phoneNumber" [(ngModel)]="phoneNumber">
                </mat-form-field>
             </div>
-            <div fxLayoutAlign="row">
+            <div class="textbox-div">
                 <mat-form-field appearance="outline" class="textbox">
                     <mat-label>Pincode</mat-label>
                     <input matInput type="text" formControlName="pincode" id="pincode" [(ngModel)]="pincode">
@@ -70,7 +70,7 @@
                     <textarea matInput formControlName="address" id="address" [(ngModel)]="address"></textarea>
                   </mat-form-field>
                 </div>
-                   <div fxLayoutAlign="row">
+                   <div class="textbox-div">
                     <mat-form-field appearance="outline" class="textbox">
                         <mat-label>city/town</mat-label>
                         <input matInput type="text" formControlName="city" id="city" [(ngModel)]="city">

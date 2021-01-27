@@ -6,7 +6,7 @@ import { DashboardComponent } from '../app/components/dashboard/dashboard.compon
 import { DisplayComponent } from './components/display/display.component';
 import { MyCartComponent } from './components/my-cart/my-cart.component';
 import { OrderConfirmedComponent } from './components/order-confirmed/order-confirmed.component';
-
+import { WishlistComponent } from './components/wishlist/wishlist.component';
 
 
 
@@ -18,7 +18,8 @@ const routes: Routes = [{ path: '', pathMatch: 'full', redirectTo: '/login'},
                           {path: '', component: DisplayComponent },
                           {path: 'books', component: DisplayComponent},
                           {path: 'cart', component: MyCartComponent},
-                          {path: 'orderConfirmation', component: OrderConfirmedComponent}]}];
+                          {path: 'orderConfirmation', component: OrderConfirmedComponent},
+                          {path: 'wishlist', component: WishlistComponent}]}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

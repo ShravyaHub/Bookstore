@@ -24,6 +24,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import { OrderConfirmedComponent } from './components/order-confirmed/order-confirmed.component';
 import {MatBadgeModule} from '@angular/material/badge';
 import { JwPaginationComponent } from './components/jw-pagination/jw-pagination.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { JwPaginationComponent } from './components/jw-pagination/jw-pagination.
     DisplayComponent,
     MyCartComponent,
     OrderConfirmedComponent,
-    JwPaginationComponent
+    JwPaginationComponent,
+    WishlistComponent
   ],
   imports: [
     BrowserModule,
