@@ -1,1 +1,28 @@
-<p>wishlist works!</p>
+<div class="main">
+    <div class="header">
+        <div class="books-text">Wishlist</div>
+    </div>
+    <div class="book-div">
+    <div *ngFor="let item of data" fxLayoutALign="row">
+    <mat-card>
+        <mat-card-content fxLayoutAlign="center center" class="cover">
+            <img src={{item.product_id.bookImage}}>
+        </mat-card-content>
+        <mat-card-content class="detail">
+            <mat-card-title>
+                {{item.product_id.bookName}}
+            </mat-card-title>
+            <mat-card-subtitle>
+                by {{item.product_id.author}}
+            </mat-card-subtitle>
+            <span><b>Rs {{item.product_id.price}}</b>
+            </span>
+<div class="button">
+<button mat-flat-button class="added" (click)="remove(item, item.product_id._id)">REMOVE</button>
+</div>
+        </mat-card-content>
+    </mat-card>
+</div>
+</div>
+</div>
+

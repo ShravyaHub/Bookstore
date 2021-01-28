@@ -10,6 +10,7 @@ import { DataSharingService } from '../../services/dataSharing/data-sharing.serv
 export class DashboardComponent implements OnInit {
 
   amount: any;
+  wishlistAmount: any;
   message: any;
   subscription:any;
 
@@ -20,12 +21,20 @@ export class DashboardComponent implements OnInit {
     this.subscription = this.data.currentMessage.subscribe((message:any) => {
       console.log(message);
       this.getCartItems();
+      this.getWishlistItems();
       });
   }
 
   getCartItems() {
     this.productService.getCartItems().subscribe((response:any) => {
       this.amount=response.result.length;
+      console.log(response.result.length);
+        });
+  }
+
+  getWishlistItems() {
+    this.productService.getWishlistItems().subscribe((response:any) => {
+      this.wishlistAmount=response.result.length;
       console.log(response.result.length);
         });
   }

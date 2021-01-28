@@ -25,6 +25,9 @@ export class DisplayComponent implements OnInit {
   message: any;
   subscription:any;
   clicked=false;
+  wishlisted=false;
+  p: number = 1;
+    // collection: any[] = someArrayOfThings;  
 
   ngOnInit(): void {
     // this.items = Array(150).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}`}));
@@ -108,6 +111,20 @@ public getServerData(event?:PageEvent){
   rel() {
     this.selectedValue = this.myDropDownList.nativeElement.value;
     this.displayBooks();
+  }
+
+  addToWishlist(item:any) {
+    item.addedToWishlist=false;
+    for(let b of this.data){
+      if(item.product_id==b.product_id){
+        item.addedToWishlist=true;
+      }
+    }
+    this.productservice.addToWishlist(item, item._id).subscribe((result:any)=>{
+      this.wishlisted=false;
+      console.log(result);
+      this.dataService.changeMessage("Wishlist updated");
+    })
   }
 
 }

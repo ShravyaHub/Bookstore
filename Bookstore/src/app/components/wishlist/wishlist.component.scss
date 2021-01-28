@@ -1,0 +1,123 @@
+.main {
+    margin-right: 130px;
+    margin-top: 30px;
+
+}
+
+.books-text{
+    font-size: 20px;
+}
+
+mat-card {
+    padding:0px;
+}
+
+.header {
+    margin-left: 130px;
+    display: flex;
+    justify-content: center;
+}
+
+.detail {
+    padding: 16px;
+}
+
+.cover {
+    background-color: #F5F5F5;
+}
+
+mat-card-title {
+    font-size: 20px;
+}
+
+.book-div {
+    display: flex;
+    flex-direction: row;
+    margin-left: 61px;
+        margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+mat-card {
+    width: 220px;
+    margin-left: 69px;
+    margin-bottom: 30px;
+}
+
+
+
+.cover {
+    height: 150px;
+}
+
+img {
+    height: 120px;
+    width: 90px;
+}
+
+.button {
+    margin-top: 10px;
+}
+
+.add-button {
+    color: white;
+    border: 1px solid;
+    background-color: #A03037;
+    border-radius: 0px;
+    padding: 0px 10px 0px 10px;
+}
+
+.added {
+    color: white;
+    border: 1px solid;
+    background-color: #3371B5;
+    border-radius: 0px;
+    width: 100%;
+    padding: 0px 10px 0px 10px;
+}
+
+.wishlisted {
+    color: black;
+    border: black 1px solid;
+    background-color: white;
+    letter-spacing: 1px;
+}
+
+.wishlist {
+    letter-spacing: 1px;
+    color: black;
+    border: 1px solid;
+    background-color: white;
+    border-radius: 0px;
+    padding: 0px 10px 0px 10px;
+
+}
+
+@media only screen and (max-width: 1055px){
+
+    .book-div{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+}
+
+@media only screen and (max-width: 480px){
+
+    .header{
+        margin-left: 130px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+
+    .books-text, .select {
+        display: flex;
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+    
+}

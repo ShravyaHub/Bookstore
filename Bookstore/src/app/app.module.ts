@@ -25,6 +25,7 @@ import { OrderConfirmedComponent } from './components/order-confirmed/order-conf
 import {MatBadgeModule} from '@angular/material/badge';
 import { JwPaginationComponent } from './components/jw-pagination/jw-pagination.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
     MatPaginatorModule,
     MatExpansionModule,
     MatRadioModule,
-    MatBadgeModule
+    MatBadgeModule,
+    NgxPaginationModule
   ],
   providers: [{provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2000}},],
   bootstrap: [AppComponent]

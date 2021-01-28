@@ -22,4 +22,10 @@ export class ProductServiceService {
 
   order(data:any) { return this.http.post('/bookstore_user/add/order', data); }
 
+  addToWishlist(data:any, id:any) { return this.http.post('/bookstore_user/add_wish_list/' + id, data)}
+
+  getWishlistItems() { return this.http.get('/bookstore_user/get_wishlist_items'); }
+
+  removeFromWishlist(data:any, id:any) { return this.http.delete('/bookstore_user/remove_wishlist_item/' + id, data); }
+
 }
